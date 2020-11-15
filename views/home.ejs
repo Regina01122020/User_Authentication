@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>User Authentication Challenge</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+
+</head>
+<body>
+    <br><br>
+    <div id="div1">
+
+    <h4> List of users stored in the database: </h4><br> 
+    <center><table class="table" cellpadding ="5" style ="background-color: lightcyan;">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% profile.forEach(user => { %>
+                <tr>
+                    <td><%= user.email%></td>
+                    <td><%= user.username%></td>
+                    <td><form action="/delete-user-record:id <% profile._id %>" method="DELETE">
+                            <button type="submit">Delete</button>
+                         </form>
+                    </td>
+                    <td><button><a href="/update-user-record">Update</a> </button></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table></center><br><br>
+    
+        <br>
+        <div class="btn btn-success">
+            <a href="/logout">Logout</a>
+        </div>
+        <br><br>  
+
+    </div>
+
+</body>
+</html>

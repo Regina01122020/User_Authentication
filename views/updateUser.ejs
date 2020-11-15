@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Update User Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <br><br>
+        <div id="div1">
+        <h4>Edit email and username here:</h4>
+            <form action="/update-user-record:id <% profile.id %> " method="POST">
+                <div style ="background-color: lightcyan;">
+                    <br>
+                    <label for="email">Email: </label>
+                    <input type="Email" id="email" name="email" value=" <%= profile.email %> ">
+                    <br><br>
+                    <label for="username">Username: </label>
+                    <input type="Text" id="username" name="username" value=" <%= profile.username %> ">
+                    <br><br>
+                </div>
+                <br><br> 
+                <div>
+                    <button type="submit">Save Changes</button><br><br>
+                </div>
+                <br>
+                <div>
+                    <button class="btn btn-success"><a href="/view-user-info">Back</a></button></a>
+                </div>
+            </form>  
+        </div>
+   
+</body>
+</html>
